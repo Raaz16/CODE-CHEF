@@ -16,10 +16,15 @@ int main()
         {
             cin >> array[i];
         }
-        bool check = true;
+        bool check = true;   
+        if (array[0] != 1)
+        {
+            check = false;
+        }
+        
         while (start != last)
         {
-            if (array[start] != 1 && array[start] != array[last])
+            if (array[start] != array[last])
             {
                 check = false;
                 break;
@@ -39,9 +44,12 @@ int main()
         }
         if (check)
         {
-            cout << "Yes" << endl;
+            cout << "yes" << endl;
         }
         else
-            cout << "No" << endl;
+        {
+            cout << "no" << endl;
+
+        }
     }
 }
