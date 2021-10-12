@@ -22,7 +22,7 @@ int main()
             check = false;
         }
         
-        while (start != last)
+        while (start < last)
         {
             if (array[start] != array[last])
             {
