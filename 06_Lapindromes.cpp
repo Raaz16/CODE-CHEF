@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// CONCEPT OF FREQUENCY ARRAY IS USED
 int main()
 {
     int t;
@@ -9,41 +10,30 @@ int main()
     while (t--)
     {
         string s;
-        int count = 0;
-        cin >> s;
-        int l = s.size();
-        int mid = l / 2;
-        if (l % 2 == 0)
+        cin>>s;
+        int left[26] = {0};
+        int right[26] = {0};
+        int len = s.length();
+        for (int i = 0; i < len / 2; i++)
         {
-            for (int i = 0; i < mid; i++)
-            {
-                for (int j = mid; j < l; j++)
-                {
-                    if (s[i] == s[j])
-                    {
-                        count++;
-                    }
-                }
-            }
+            int index = s[i] - 'a';
+            left[index]++;
         }
+        for (int i = (len + 1) / 2; i < len; i++)
+        {
+            int index = s[i] - 'a';
+            right[index]++;
+        }
+        int Case = 0;
+        for (int i = 0; i < 26; i++)
+        {
+            if (left[i] != right[i])
+                Case = 1;
+        }
+        if (Case == 0)
+            cout << "YES" << endl;
         else
-        {
-            for (int i = 0; i < mid; i++)
-            {
-                for (int j = mid + 1; j < l; j++)
-                {
-                    if (s[i] == s[j])
-                    {
-                        count++;
-                    }
-                }
-            }
-        }
-        if (count == mid)
-        {
-            cout << "Yes" << endl;
-        }
-        else
-            cout << "No" << endl;
+            cout << "NO" << endl;
     }
+    return 0;
 }
