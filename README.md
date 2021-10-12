@@ -1,2 +1,2 @@
-# Chandigarh-Assignment-CODE-CHEF
+#CODE-CHEF
 CodeChef Questions Assignment for Chandigarh Universirty
